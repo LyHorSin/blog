@@ -1,0 +1,20 @@
+body {
+    background: black;
+    color: white;
+}
+
+a {
+    font-size: x-large;
+    color: white;
+    text-decoration: none;
+}
+
+strong {
+    font-size: large;
+    color: white;
+}
+
+.hover-profile:hover {
+    background: black;
+    border-radius: 30px;
+}
