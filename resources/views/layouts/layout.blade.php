@@ -29,7 +29,7 @@
                 @yield('special')
             </div>
         </div>
-        @yield('register')
+        @yield('full_screen')
     </div>
 
 </body>

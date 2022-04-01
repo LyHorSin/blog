@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Posts\PostsController;
 use App\Http\Controllers\Auths\LoginController;
+use App\Http\Controllers\Auths\ProfileController;
 use App\Http\Controllers\Auths\RegisterController;
 use App\Http\Controllers\Comments\CommentsController;
 use Illuminate\Support\Facades\Route;
- use App\Http\Controllers\Posts\PostsController;
  
 /*
 |--------------------------------------------------------------------------
@@ -36,3 +37,6 @@ Route::post('/register',[RegisterController::class, 'store']);
 // Login User
 Route::get('/login/create',[LoginController::class, 'create']);
 Route::post('/login',[LoginController::class, 'store']);
+
+// Profile 
+Route::get('/profile',[ProfileController::class, 'show']);

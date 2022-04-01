@@ -29,6 +29,7 @@ class RegisterController extends Controller
             'phone_number' => $user['phone_number'],
             'password' => encrypt($user['password']) 
         ]);
+
         return redirect('/');
     }
 }

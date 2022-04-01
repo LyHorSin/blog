@@ -1,5 +1,5 @@
 @extends('layouts.layout')
-@section('register')
+@section('full_screen')
     @if ($errors->any())
         <div class="alert alert-danger" role="alert">
             @foreach ($errors->all() as $error)

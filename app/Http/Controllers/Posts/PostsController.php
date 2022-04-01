@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Post;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostsController extends Controller
 {
@@ -23,6 +24,11 @@ class PostsController extends Controller
     }
 
     public function show() {
+        $user = Auth::user();
+        if (!$user) {
+            return redirect('/login/create');
+        }
+
         $posts = Post::allPost();
         return view('posts.posts', compact('posts'));
     }
