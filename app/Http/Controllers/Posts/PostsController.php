@@ -24,11 +24,6 @@ class PostsController extends Controller
     }
 
     public function show() {
-        $user = Auth::user();
-        if (!$user) {
-            return redirect('/login/create');
-        }
-
         $posts = Post::allPost();
         return view('posts.posts', compact('posts'));
     }

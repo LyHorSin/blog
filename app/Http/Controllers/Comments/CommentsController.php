@@ -9,10 +9,11 @@ use Illuminate\Http\Request;
 class CommentsController extends Controller
 {
     public function create() {
-        return view();
+        return view('comments.comment');
     }
 
     public function store(Request $request, $post_id) {
+        dd($request->all());
         $request->validate([
             'comment' => 'required|max:50'
         ]);
@@ -20,6 +21,6 @@ class CommentsController extends Controller
             'body' => $request['comment'],
             'post_id' => $post_id
         ]);
-        return back();
+        return redirect('/');
     }
 }

@@ -5,8 +5,7 @@
             <img class="rounded-circle" src="images/camera.png" style="width: 150px; height: 150px">
         </div>
         <div class="col-6 d-flex">
-            <strong> Ly Hor Sin</strong>
-
+            <a href="/logout"> <strong> LogOut </strong> </a> 
         </div>
     </div>
 @endsection

@@ -33,7 +33,7 @@
                     <a href="">Like</a>
                 </div>
                 <div class="col-6">
-                    <a href="">Comment</a>
+                    <a href="/comments/create">Comment</a>
                 </div>
                 <div class="col-3">
                     <a href="">Share</a>

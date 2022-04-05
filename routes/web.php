@@ -22,21 +22,28 @@ use Illuminate\Support\Facades\Route;
 
 // Post Route
 Route::get('/', [PostsController::class, 'show']);
-Route::get('/posts/{post}', [PostsController::class, 'showPost']);
-Route::get('/posts/create/post', [PostsController::class, 'create']);
-Route::post('/posts', [PostsController::class, 'store']);
-
-// Comment Route
-Route::get('/comments/create',[CommentsController::class, 'create']);
-Route::post('/comments/{id}',[CommentsController::class, 'store']);
 
 // Register User
 Route::get('/register/create',[RegisterController::class, 'create']);
 Route::post('/register',[RegisterController::class, 'store']);
 
 // Login User
-Route::get('/login/create',[LoginController::class, 'create']);
+Route::get('/login/create',[LoginController::class, 'create'])->name('login.create');
 Route::post('/login',[LoginController::class, 'store']);
 
-// Profile 
-Route::get('/profile',[ProfileController::class, 'show']);
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/posts/{post}', [PostsController::class, 'showPost']);
+    Route::get('/posts/create/post', [PostsController::class, 'create']);
+    Route::post('/posts', [PostsController::class, 'store']);
+
+    // Comment Route
+    Route::get('/comments/create',[CommentsController::class, 'create']);
+    Route::post('/comments/{id}',[CommentsController::class, 'store']);
+
+    // Profile 
+    Route::get('/profile',[ProfileController::class, 'show']);
+
+
+    //Logut User
+    Route::get('/logout',[ProfileController::class, 'logout']);
+});
